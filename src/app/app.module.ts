@@ -6,6 +6,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DemoMaterialModule } from "./material-module";
+import { MatStepperModule } from "@angular/material/stepper";
 
 import { AppComponent } from "./app.component";
 
@@ -17,7 +18,8 @@ import { AppComponent } from "./app.component";
     HttpClientModule,
     DemoMaterialModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatStepperModule
   ],
   entryComponents: [AppComponent],
   declarations: [AppComponent],

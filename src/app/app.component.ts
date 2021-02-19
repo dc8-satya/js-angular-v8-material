@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 /**
  * @title Basic cards
@@ -8,7 +9,22 @@ import { Component } from "@angular/core";
   templateUrl: "app.component.html",
   styleUrls: ["app.component.css"]
 })
-export class AppComponent {}
+export class AppComponent {
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
+  constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      name: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      email: ['', Validators.required]
+    });
+  }
+}
 
 /**  Copyright 2019 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
